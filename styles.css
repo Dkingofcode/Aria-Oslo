@@ -130,4 +130,19 @@ footer a{
 }
 
 
+@media (max-width: 1540px) {  
+body {
+    width: auto;
+    margin-left: 130px 64px 48px 60px;
+}
 
+h1, nav, footer {
+    font-size: 24px;
+}
+}
+
+@media (max-width: 920px) {
+  header{
+    flex-direction: column;
+  }  
+}
