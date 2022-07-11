@@ -13,6 +13,11 @@ body{
     line-height: 1.5;
     background-color: #282121;
     color: white;
+    background-image:url(Frame3.png);
+    background-repeat: repeat-x;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 20px 100%;
     width: 1340px;
     margin: 0 auto;
     border: 1px solid violet;
@@ -32,61 +37,126 @@ section{
     gap: 1em;
     border: 1px solid red;
 }
-section h1{
+ h1{
     grid-column: 2 / span 10;
     text-align: center;
     border: 1px solid violet;
 }
  
-.project div.artwork{
+h1 span{
+    color: pink;
+}
+
+.green{
+    color: #177;
+}
+
+.red{
+    color: blue;
+}
+
+
+
+.pro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 4rem, 0;
+}
+.image {
+width: 600px;
+}
+.artwork{
+    border: 1px solid navy;
+     
+}
+
+ 
+.project .artwork{
     border: 1px solid navy;
      display: grid;
      grid-column: 2 / span 6;
      text-align: center;
 }
 
- section.project div.description{
+ .project .description{
      grid-column: 9 / span 4;
  }
 
-section.project img{
+.project img{
     max-height: 400px;
 }
 
-section.project-alt div.artwork{
-    border: 1px solid navy;
-     grid-column: 9 / span 1;
+.project-alt .artwork{
+  grid-column: 5 / span 5;
 }
 
- section.project-alt div.description{
-     grid-column: 2 / span 4;
+  .project-alt .description{
+     grid-column:1/ span 4 ;
  }
 
-section.about div.photo{
+ .project-beta .artwork{
+    grid-column: 3/ span 2;
+ }
+ 
+ .project-halt .artwork{
+    grid-column: 8 / span 2;
+ }
+
+ .project-halt .description{
+    grid-column: 4/ span 3;
+ }
+
+.about .photo{
     grid-column: 2 / span 6;
     border: 1px solid brown;
 }
 
-section.about div.description{
+.about .description{
     grid-column: 8 / span 4;
     text-align: left;
-    margin: 0 0 0 0;
+    margin: 0 0 0 90px;
 }
 
-section.about p{
+.about p{
     margin: 16px 0;
 }
 
-section.contact div.form{
+.contact .form{
     grid-column: 4 / span 6;
 }
 
+.contact h1{
+    text-align: left;
+}
 
 
+.alice-layout img{
+    grid-column: 1 /span 12;
+    max-height: 500px;
+    width: 100%;
+}
 
+.alice-layout h2{
+    grid-column: 1 / span 4;
+}
+
+.alice-layout div{
+    grid-column: 7 span /12;
+}
+
+.grid-layout div{
+    grid-column:  span 6;
+    border: 1px solid;
+}
+
+.grid-layout img{
+    max-height: 300px;
+    width: 100%;
+}
 
 h1{
-    font-size: 29px;
+    font-size: 29px;   
     font-weight: 700;
 }
 
@@ -100,13 +170,14 @@ h2{
 a{
     color: white;
     text-decoration: none;
-    transition: color  1s;
+    transition: color  0.3s, border-bottom 0.3s;
     margin: 0 0 0 32px;
-
+    border-bottom: 2px solid transparent;
 }
 
 a:hover, a.selected{
     color: goldenrod;
+    border-bottom: 2px solid goldenrod;
    /* margin: 0 0 0 64px;
 */}
 
@@ -131,7 +202,7 @@ footer a{
 
   input, textarea {
     width: 100%;
-    background-color: #111181;
+    background-color: #1181;
     border: 2px solid #ffffff;
     color: #fff;
     padding: 8px 16px 8px 16px;
@@ -148,10 +219,21 @@ textarea{
 
 button{
    border: none;
-   font-size: 24px;
+   font-size: 14px;
    font-family: Inter;
    background-color: #f4bbf4;
+   padding: 12px 25px;
+   font-weight: 600;
+   border-radius: 10px;
 }
+
+footer img{
+    width: auto;
+    height: 50px;
+}
+
+
+
 
 @media (max-width: 1540px) {  
 body {
@@ -172,6 +254,7 @@ h1, nav, footer {
 
   body{
       text-align: center;
+      
   }
   
   nav {
@@ -184,19 +267,63 @@ h1, nav, footer {
 
     section {
       grid-template-columns: repeat(2, 1fr);
-
       
     }
+
+    h1{
+        text-align: center;
+        align-items: center;
     
-    section h1, 
-    section.project div.artwork, 
-    section.project div.description,
-    section.about div.photo,
-    section.about div.description{
+    }
+    .about .description{
+        margin: 0 auto;
+    }
+
+    .project-alt .artwork img{
+        border: 3px solid;
+        width: 80%;
+        margin: 0 auto;
+
+    }
+
+    .project-beta img{
+        width: 40%;
+        margin: 0 auto;
+    }
+
+     .project-halt img{
+        width: 40%;
+        margin: 0 auto;
+     }
+
+    .description{
+        border: 1px solid;
+        grid-column: 1/ span 2;
+    }
+
+    .alice-layout img{
+        margin: 0 auto;
+    }
+
+    .contact .form{
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .grid-layout img{
+        max-width: 50%;
+
+    }
+       h1,
+     .pro .artwork,
+    .project .artwork, 
+    .project .description,
+    .about .photo,
+    .about .description{
         grid-column: 1 / span 2;
     }     
 
-    img{
+    img, .image{
         width: 60%;
         text-align: right;
         align-items: right;
@@ -206,11 +333,12 @@ h1, nav, footer {
 @media (max-width: 700px){
   body{
       text-align: center;
+      background-color: #177;
     
   };
 
     
-   img{
+   img, .image{
       width: 100%;
       border: 1px solid turquoise;
   }
@@ -220,13 +348,17 @@ h1, nav, footer {
         gap: 24px 24px;
         margin: 64px 0;  
       }
+
+      .grid-layout img{
+        max-width: 100%;   
+    }
       
-      section h1, 
-      section.project div.artwork, 
-      section.project div.description,
-      section.about div.photo,
-      section.about div.description
-      section.contact div.form{
+       h1,
+       .pro .artwork 
+      .project .description,
+      .about .photo,
+      .about .description
+      .contact .form{
           grid-column: 1 / span 2;
       }     
 }
@@ -248,6 +380,9 @@ h1, nav, footer {
         justify-content: center;
         border: 1px solid ;
         width: 60%;
+    }
+    .project img{
+        width: auto;
     }
 }
 
