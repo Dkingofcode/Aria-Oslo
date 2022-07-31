@@ -20,7 +20,7 @@ body{
     background-size: 20px 100%;
     width: 1340px;
     margin: 0 auto;
-    border: 1px solid violet;
+    overflow-x: hidden;
 }
 
 header{
@@ -35,12 +35,12 @@ section{
     grid-auto-flow: dense;
     grid-template-columns: repeat(12, 1fr);
     gap: 1em;
-    border: 1px solid red;
+
 }
  h1{
     grid-column: 2 / span 10;
     text-align: center;
-    border: 1px solid violet;
+    
 }
  
 h1 span{
@@ -67,13 +67,11 @@ h1 span{
 width: 600px;
 }
 .artwork{
-    border: 1px solid navy;
-     
+    border: 1px transparent;  
 }
 
- 
 .project .artwork{
-    border: 1px solid navy;
+    border: 1px solid transparent;
      display: grid;
      grid-column: 2 / span 6;
      text-align: center;
@@ -109,7 +107,7 @@ width: 600px;
 
 .about .photo{
     grid-column: 2 / span 6;
-    border: 1px solid brown;
+    border: 1px solid transparent;
 }
 
 .about .description{
@@ -130,6 +128,9 @@ width: 600px;
     text-align: left;
 }
 
+.alice-layout{
+
+}
 
 .alice-layout img{
     grid-column: 1 /span 12;
@@ -147,7 +148,7 @@ width: 600px;
 
 .grid-layout div{
     grid-column:  span 6;
-    border: 1px solid;
+    border: 1px solid transparent;
 }
 
 .grid-layout img{
@@ -234,6 +235,46 @@ footer img{
 
 
 
+.from-left{
+   transform: translateX(-50%) 
+}
+
+.from-right{
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right{
+    transition: opacity 100ms ease-in,
+    transform 1s ease-in;
+    opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fade-in{
+    opacity: 0;
+    transition: opacity 800ms ease-in;
+}
+
+.fade-in.appear{
+    opacity: 1;
+}
+
+@keyframes fade-in{
+    0%{ opacity: 0%;  }
+    100%{ opacity: 100%;  }
+}
+
+@keyframes size-in {
+  0%{ width: 0%}
+  100%{width: 100%;}  
+}
+
 
 @media (max-width: 1540px) {  
 body {
@@ -280,7 +321,7 @@ h1, nav, footer {
     }
 
     .project-alt .artwork img{
-        border: 3px solid;
+        border: 3px solid transparent;
         width: 80%;
         margin: 0 auto;
 
@@ -297,7 +338,7 @@ h1, nav, footer {
      }
 
     .description{
-        border: 1px solid;
+        border: 1px solid transparent;
         grid-column: 1/ span 2;
     }
 
@@ -340,7 +381,7 @@ h1, nav, footer {
     
    img, .image{
       width: 100%;
-      border: 1px solid turquoise;
+      border: 1px solid transparent;
   }
      
     section {
@@ -378,7 +419,7 @@ h1, nav, footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 1px solid ;
+        border: 1px solid transparent;
         width: 60%;
     }
     .project img{
